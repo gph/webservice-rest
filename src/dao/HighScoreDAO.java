@@ -20,7 +20,7 @@ public class HighScoreDAO extends ConnectionFactory{
 		
 		try {
 			
-			pstmt = conn.prepareStatement("SELECT * FROM highscore");
+			pstmt = conn.prepareStatement("SELECT * FROM highscore ORDER BY score DESC LIMIT 3;");
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()){
